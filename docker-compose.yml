@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./cards:/cards
+    restart: always
+    network_mode: host
+    command: sh -c 'hashcards drill --hostname $$(hostname).exe.xyz /cards'
